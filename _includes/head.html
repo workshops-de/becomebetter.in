@@ -8,4 +8,10 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+
+  {% if page.noindex %}
+    <<meta name="robots" content="noindex, follow">
+  {% else %}
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  {% endif %}>
 </head>
