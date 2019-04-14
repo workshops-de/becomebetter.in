@@ -1,10 +1,9 @@
 ---
-layout: section
-title: Imprint - Angular.Training by Angular.DE
+title: Imprint
 noindex: true
+layout: page
 ---
 
-## Imprint
 Angaben gemäß § 5 TMG:  
 Symetics GmbH<br>
 c/o Factory<br>
@@ -12,7 +11,7 @@ Lohmühlenstraße 65<br>
 12435 Berlin<br>
 
 ### Kontakt:
-E-Mail: [robin.boehm@workshops.de](mailto:robin.boehm@workshops.de)  
+E-Mail: [info@angular.de](mailto:info@angular.de)  
 Telefon: +49 (0) 201 / 87535773
 
 ### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:

@@ -1,10 +1,9 @@
 ---
-layout: section
-title: Privacy Policy - Angular.Training by Angular.DE
+title: Privacy Policy
 noindex: true
+layout: page
+header_menu: false
 ---
-
-## Privacy Policy / Data Protection Declaration
 
 ### General Information
 
