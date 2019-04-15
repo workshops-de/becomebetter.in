@@ -1,0 +1,86 @@
+---
+---
+// 🔝 those lines above are needed by jekyll
+
+// General
+// $enable-shadows: true;
+
+// Font / Typographie
+$font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size-base: 1.1rem;
+$line-height-base: 1.618;
+
+// Theme Colors
+$primary:#0386c9; // #4eafca
+$success:#43ac6a;
+$warning:#e99002;
+$danger: #f04124;
+$info:   #5bc0de;
+$black:  #000;
+$white:  #fff;
+$yiq-contrasted-threshold:  195;
+
+// Spacers
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 6)
+), $spacers);
+
+// Cards
+$card-cap-bg: $white;
+$card-border-color: $white;
+
+// Pagination
+$pagination-border-width: 0;
+$pagination-padding-y: 1rem;
+$pagination-padding-x: 1rem;
+
+// Carousel
+$carousel-indicator-height: 5px;
+$carousel-indicator-active-bg: $primary;
+
+// Settings
+$navbar-brand-font-size: 1rem;
+$line-height-base: 1.618;
+$headings-margin-bottom: 1.1rem;
+$carousel-control-width: 6%;
+
+
+// Imports
+//
+@import "mixins/underline";
+@import "fonts/font-source-sans";
+@import "fonts/font-awesome";
+@import "bootstrap";
+@import "inputs";
+@import "image-loader";
+@import "navbar";
+@import "footer";
+@import "rouge-highlight";
+@import "headroom";
+@import "copy";
+@import "google-search";
+@import "header";
+@import "sticky";
+@import "post";
+@import "checked-list";
+@import "stars";
+@import "code";
+@import "content";
+@import "img-utilities";
+@import "newsletter";
+@import "bootstrap-toc";
+@import "misc";
+@import "ratings";
+@import "clients";
+@import "ng-de-header";
+
+// Nothing else
+// Pay 10 Euros if you commit sth. here

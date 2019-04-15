@@ -1,0 +1,23 @@
+<nav data-headroom="" class="navbar navbar-light navbar-ajs navbar-expand-md fixed-top headroom headroom--top headroom--not-bottom">
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand d-none d-md-block img-grayscale-100" href="/">
+      <img alt="Angular.DE" src="/assets/img/angular-de-logo.svg" width="22">
+    </a>
+    <div class="collapse navbar-collapse order-10 mt-3 mt-sm-0" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item {% if page.url contains '/artikel' %}active{% endif %}">
+          <a class="nav-link" href="/artikel/">Artikel</a>
+        </li>
+        <li class="nav-item {% if page.url contains '/tutorials' %}active{% endif %}">
+          <a class="nav-link" href="/tutorials/">Tutorials</a>
+        </li>
+      </ul>
+    </div>
+    <a class="navbar-brand order-md-12" href="/">
+      becomebetter.in
+    </a>
+  </div>
+</nav>
