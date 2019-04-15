@@ -1,41 +1,64 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+title: Angular.DE
+description: ""
+url: "https://angular.de" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+ga_property: "UA-39010393-1"
+permalink: /artikel/:slug/
+repository_url: "https://github.com/symetics/angular.de"
+ws_course_id: 4
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Angular.Training by Angular.DE
-email: info@angular.de
-description: >- # this means to ignore newlines until "baseurl:"
-  Prototype for multi-layered-learning approach to teach modern technologies.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: angular_de
-github_username:  angularjs-de
+collections:
+  books:
+    output: true
+    permalink: /buecher/:path/
+  pages:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: "_posts" # an empty string here means all files in the project
+    values:
+      layout: "post"
+      header_image: "header.jpg"
+      toc: true
+  - scope:
+      path: "_books" # an empty string here means all files in the project
+    values:
+      layout: "chapter"
+  - scope:
+      path: "_pages" # an empty string here means all files in the project
+    values:
+      layout: "page"
+
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/seite/:num/'
+  title: ':title - Seite :num von :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
 
 # Build settings
 markdown: kramdown
-theme: minima
+sass:
+  style: :compressed
+  sass_dir: assets/css
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate-v2
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Dockerfile
+  - .gitignore
+  - nginx.conf
+  - cloudbuild.yaml
+  - firebase-debug.log
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# webrick:
+#   headers:
+#     Content-Security-Policy: "style-src 'self'"
