@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "angular-training-production",
-    "beta": "angular-training-beta",
-    "master": "angular-training-production"
+    "default": "becomebetter-in-prod",
+    "beta": "becomebetter-in-beta",
+    "master": "becomebetter-in-prod"
   }
 }
