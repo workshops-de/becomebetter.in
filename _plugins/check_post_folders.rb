@@ -1,3 +1,4 @@
+=begin
 Jekyll::Hooks.register :site, :after_init do |p|
   Dir["_posts/*"].each do |file|
     folder_name = File.basename(file)
@@ -9,3 +10,4 @@ Jekyll::Hooks.register :site, :after_init do |p|
     end
   end
 end
+=end
