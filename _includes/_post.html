@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-4">
       <a href="{{ post.url }}" class="rounded c-img-post"
-        style="background-image: url('/artikel/{{post.slug}}/{{ post.header_image }}');">
+        style="background-image: url('/{{post.categories}}/{{post.slug}}/{{ post.header_image }}');">
         <span class="sr-only">{{ post.title }}</span>
         <span class="c-post-categories ml-2">
           {% for category in post.categories %}
