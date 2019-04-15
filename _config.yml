@@ -5,7 +5,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 ga_property: "UA-39010393-1"
 permalink: /:categories/:slug/
-repository_url: "https://github.com/symetics/angular.de"
+repository_url: "https://github.com/symetics/becomebetter.in"
 ws_course_id: 4
 
 collections:
