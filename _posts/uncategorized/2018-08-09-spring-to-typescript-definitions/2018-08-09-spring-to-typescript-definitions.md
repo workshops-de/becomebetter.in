@@ -4,7 +4,7 @@ description: "TypeScript Declarations aus Spring REST API Metadaten generieren u
 author: "Björn Wilmsmann"
 published_at: 2018-08-09 21:25:01.000000Z
 header_source: https://unsplash.com/photos/EhLH-WN7F7I
-categories: angular
+categories: uncategorized
 ---
 
 ## Was möchten wir erreichen?
