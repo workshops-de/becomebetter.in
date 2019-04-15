@@ -1,0 +1,16 @@
+footer {
+  border-top: #eceff3 1px solid;
+  padding: $spacer*3 0 $spacer*4;
+
+  li a { font-size: $small-font-size; }
+
+  a {
+    color: #888;
+
+    &:hover,
+    &:focus {
+      color: #bbb;
+      text-decoration: none;
+    }
+  }
+}
