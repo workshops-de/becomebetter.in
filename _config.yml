@@ -9,28 +9,28 @@ repository_url: "https://github.com/symetics/becomebetter.in"
 ws_course_id: 4
 
 collections:
-  books:
-    output: true
-    permalink: /buecher/:path/
   pages:
+    output: true
+    permalink: /:name/
+  categories:
     output: true
     permalink: /:name/
 
 defaults:
+  - scope:
+      path: "_pages" # an empty string here means all files in the project
+    values:
+      layout: "page"
+  - scope:
+      path: "_categories" # an empty string here means all files in the project
+    values:
+      layout: "category"
   - scope:
       path: "_posts" # an empty string here means all files in the project
     values:
       layout: "post"
       header_image: "header.jpg"
       toc: true
-  - scope:
-      path: "_books" # an empty string here means all files in the project
-    values:
-      layout: "chapter"
-  - scope:
-      path: "_pages" # an empty string here means all files in the project
-    values:
-      layout: "page"
 
 pagination:
   enabled: true

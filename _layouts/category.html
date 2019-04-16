@@ -1,0 +1,18 @@
+---
+layout: base
+---
+<div class="container pt-6">
+  <h1 class="py-4">{{ page.title }}</h1>
+
+  <pre>
+    title: "{{ title }}"
+    name: "{{ name }}"
+    page.title: "{{ page.title }}"
+    page.name: "{{ page.name }}"
+    page.category: "{{ page.category }}"
+  </pre>
+
+  <main role="main">
+    {{ content }}
+  </main>
+</div>
