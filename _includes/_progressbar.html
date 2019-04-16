@@ -1,0 +1,13 @@
+{% for links in site.posts reversed %}
+  {% if links.title == page.title %}
+    {% assign current_index = forloop.index %}
+  {% endif %}
+{% endfor %}
+
+{% assign current_page =  (site.posts | size | times: 1.0 ) %}
+{% if current_page > 0 %}
+    {% assign progress = current_index | divided_by: current_page %}
+{% endif %}
+<div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: {{ progress | times:100 }}%;" aria-valuenow="{{ progress | times:100 }}" aria-valuemin="0" aria-valuemax="100">{{ progress | times:100 }}%</div>
+</div>

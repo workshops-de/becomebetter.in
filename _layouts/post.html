@@ -1,6 +1,9 @@
 ---
 layout: base
 ---
+<div data-headroom="" style="height:80px;padding-top:60px" class="fixed-top headroom headroom--not-bottom headroom--pinned headroom--top">
+    {% include _progressbar.html %}
+</div>
 
 {% for user_hash in site.data.users %}
   {% if page.author == user_hash[1].name %}
