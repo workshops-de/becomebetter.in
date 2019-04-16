@@ -1,3 +1,5 @@
+
+=begin
 module Jekyll
   class Document
     def markdown_file?
@@ -9,4 +11,4 @@ module Jekyll
     end
   end
 end
-
+=end
