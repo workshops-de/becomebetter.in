@@ -1,12 +1,16 @@
 title: becomebetter.in
 description: "e.learning platform"
-url: "https://angular.de" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://becomebetter.in"
 ga_property: "UA-138413746-1"
 permalink: /:categories/:slug/
 repository_url: "https://github.com/symetics/becomebetter.in"
 ws_course_id: 4
+
+social_media_urls:
+  twitter: null
+  facebook: null
+  github: https://github.com/symetics/becomebetter.in
+  newsletter: https://angularjs.us5.list-manage.com/subscribe/post?u=465db430c1cb88ec6dea2ca40&amp;id=ca0643a82e
 
 collections:
   pages:
