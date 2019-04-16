@@ -1,4 +1,3 @@
-
 ---
 title: "Angular Framework Introduction"
 description: "Introduction to the Angular Framework."

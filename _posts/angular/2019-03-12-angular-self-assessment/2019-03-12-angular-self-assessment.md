@@ -1,9 +1,8 @@
-
 ---
 title: "Angular Self Assessment"
 description: "Self Assessment for the angular course. Get only content that fit's your current skillset."
 author: "Robin Böhm"
-published_at: 2019-04-13 21:25:02.000000Z
+published_at: 2019-03-12 21:25:02.000000Z
 header_source: https://unsplash.com/photos/EhLH-WN7F7I
 categories: angular
 ---
