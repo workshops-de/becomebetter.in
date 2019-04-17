@@ -5,6 +5,8 @@ author: "Robin Böhm"
 published_at: 2019-03-10 21:25:02.000000Z
 header_source: https://unsplash.com/photos/EhLH-WN7F7I
 categories: angular
+chapter: Course Introduction
+chapter_sort: 10
 ---
 
 [comment]: # [Little What] 
