@@ -1,5 +1,5 @@
-{% for links in site.posts reversed %}
-  {% if links.title == page.title %}
+{% for post in site.posts reversed %}
+  {% if post.title == page.title %}
     {% assign current_index = forloop.index %}
   {% endif %}
 {% endfor %}
