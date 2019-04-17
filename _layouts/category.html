@@ -9,11 +9,21 @@ layout: base
   </main>
 
   <h2>Chapters</h2>
+
+  {% assign items_grouped = site.posts | where: "categories", page.category | group_by: 'chapter' | sort: 'chapter_sort' | reverse %}
+
+
+{% for group in items_grouped %}
+  {% comment %} Create the items within the groups, now sorting by the criteria you want them sorted {% endcomment %}
+  {% assign items = group.items | sort: 'date' | reverse %}
+  {% comment %} Loop through the items {% endcomment %}
+  {{group.name}}
   <ol>
-  {% for post in site.posts reversed %}
-    {% if post.categories contains page.category %}
-    <li><a href="{{ post.url }}">{{post.title}}</a></li>
-    {% endif %}
-  {% endfor %}
+    {% for post in items  %}
+        <li><a href="{{ post.url }}">{{post.title}}</a></li>
+    {% endfor %}
   </ol>
+{% endfor %}
+
+  
 </div>
