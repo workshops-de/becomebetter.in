@@ -1,12 +1,15 @@
-{% for links in site.posts reversed %}
+{% assign pages_in_category =  (site.posts | where: "categories", post.category | sort: 'chapter_sort' ) %}
+
+{% for links in pages_in_category  %}
   {% if links.title == page.title %}
     {% assign current_index = forloop.index %}
   {% endif %}
 {% endfor %}
 
-{% assign current_page =  (site.posts | size | times: 1.0 ) %}
-{% if current_page > 0 %}
-    {% assign progress = current_index | divided_by: current_page %}
+
+{% assign pages_in_category_size =  pages_in_category | size | times: 1.0 %}
+{% if pages_in_category_size > 0 %}
+    {% assign progress = current_index | divided_by: pages_in_category_size %}
 {% endif %}
 <div class="progress">
     <div class="progress-bar" role="progressbar" style="width: {{ progress | times:100 }}%;" aria-valuenow="{{ progress | times:100 }}" aria-valuemin="0" aria-valuemax="100">{{ progress | times:100 }}%</div>

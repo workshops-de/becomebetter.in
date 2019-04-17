@@ -1,6 +1,6 @@
-{% assign sorted_chapters = site.posts%}
+{% assign sorted_chapters = site.posts | where: "categories", page.category | sort: 'chapter_sort' %}
 
-{% for links in sorted_chapters reversed %}
+{% for links in sorted_chapters %}
 {% if forloop.first %}
 	{% assign first = links %}
 {% endif %}

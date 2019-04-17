@@ -6,7 +6,7 @@ published_at: 2019-04-13 21:25:02.000000Z
 header_source: https://unsplash.com/photos/EhLH-WN7F7I
 categories: angular
 chapter: Angular Introduction
-chapter_sort: 20
+chapter_sort: 2.10
 ---
 
 [comment]: # [Little What] 
