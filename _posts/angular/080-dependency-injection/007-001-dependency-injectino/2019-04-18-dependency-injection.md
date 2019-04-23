@@ -11,4 +11,33 @@ chapter_sort: 7.10
 
 ## Angular Dependency Injection
 
-Lorem ipsum ...
+### Why
+
+### How?!
+
+Tree
+
+## Global Singletons
+### Services + ProvideIn Root
+### Services + Providers Array Module
+
+## Local Singletons
+
+### Components & Directives
+
+## Semi Global (Lazy Loading) / Pitfalls / forRoot & forChild
+
+### forRoot
+### forChild
+
+## Implementations
+### useClass
+### Global
+### useFactory
+
+## Injection Tokens
+### Multi Injection Tokens
+
+## Use Cases
+### Local Configuration
+### Lazy Configuration
