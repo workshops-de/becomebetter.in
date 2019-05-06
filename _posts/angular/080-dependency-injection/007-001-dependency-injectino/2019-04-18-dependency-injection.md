@@ -480,11 +480,34 @@ export class MenuComponent {
 
 ## Lazy Loading / forRoot & forChild
 
-Hier brauchts noch ne Illustration
+To understand the following problem and how to solve it you have to know the basics of lazy loading in Angular which is done by routing. But for short: Angular provides a way to lazy-load modules when a specific route is requested. Then the build will split the application into multiple chunks. When the user requests the route the chunk will be loaded on demand.
 
-### forRoot
-### forChild
+The image below illustrates three modules. The `AppModule` which is the default entry point in our application and a `LazyModule` which will be loaded when the user hits `/lazy`. Both modules depends on `SharedModule` which provides functionality across the application. Furthermore App and Lazy consists of components which injects a `SharedService` which is provided in the SharedModule.
 
-## Use Cases
-### Local Configuration
-### Lazy Configuration
+We already learned, that dependencies which are provided on module level are `global`. **But** when lazy loading comes into the game it get's a bit tricky and can result in unexpected problems.
+
+<img src="/assets/categories/angular/dependency-injection/lazy-loading-pitfall.svg" alt="Illustrates Dependency Injection Lazy Loading Pitfalls" title="Illustrates Dependency Injection Lazy Loading Pitfalls">
+
+When Angular builds the application and webpack detects a new entry point at `/lazy` it creates a new chunk. The picture below shows two chunks. Since both chunks relies on `SharedModule` it will be initialized for a second time when the user enters `/lazy`.
+
+And that's the point where DI is a bit messy.
+
+<img src="/assets/categories/angular/dependency-injection/lazy-loading-chunks.svg" alt="Illustrates Dependency Injection Lazy Loading Chunks" title="Illustrates Dependency Injection Lazy Loading Chunks">
+
+As we already learned DI looks up on component level until it reaches module level. Everything which is provided in modules **should be global.** But when using lazy loading Angular creates **another global instance**. Now `AppComponent` and `LazyComponent` will retrieve **different services instances.** This may result in memory leaks and data inconsistency.
+
+<img src="/assets/categories/angular/dependency-injection/lazy-loading-di-how-to.svg" alt="Illustrates Dependency Injection Lazy Loading How To" title="Illustrates Dependency Injection Lazy Loading How To">
+
+> **Hint:** check out this [StackBlitz example](https://stackblitz.com/edit/angular-lazy-loading-pitfall) to see what happens.
+
+### The `forRoot` & `forChild` pattern
+
+If you already worked with Angular you might saw module imports using forRoot and forChild. This pattern is quite common and helps to avoid this issue.
+
+Both methods are static and do not rely on a module instance. `forRoot` returns a module description and a providers array. This array consists of all "real" global dependencies. `forChild` returns a module description, too, but without providers.
+
+This is pattern is relevant when using modules which are shared across the application. All shared modules have to be imported with forRoot on `AppModule` level. Any other module will use `forChild`. This guarantees that all services will be created **globally and only once.**
+
+<img src="/assets/categories/angular/dependency-injection/lazy-loading-fix.svg" alt="Illustrates Dependency Injection Lazy Loading Fix" title="Illustrates Dependency Injection Lazy Loading Fix">
+
+> **Hint:** whether you are using lazy loading, or not, using this pattern is a solid approach to avoid problems and makes it clear where dependencies are provided and injected. Check out this [StackBlitz example](https://stackblitz.com/edit/angular-lazy-loading-patch) to see how it works in production.
